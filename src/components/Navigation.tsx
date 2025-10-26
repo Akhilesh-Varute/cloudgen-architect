@@ -43,7 +43,7 @@ const Navigation = () => {
           {/* Social Links & CTA - Desktop */}
           <div className="hidden md:flex items-center gap-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/Akhilesh-Varute" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -52,7 +52,7 @@ const Navigation = () => {
               <Github className="h-5 w-5" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/akhileshvarute" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -103,7 +103,7 @@ const Navigation = () => {
             ))}
             <div className="flex items-center gap-4 pt-3 border-t border-border">
               <a 
-                href="https://github.com" 
+                href="https://github.com/Akhilesh-Varute" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -112,7 +112,7 @@ const Navigation = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/akhileshvarute" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"

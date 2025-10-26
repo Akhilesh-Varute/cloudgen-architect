@@ -16,14 +16,45 @@ const Contact = () => {
     email: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'YOUR_ACCESS_KEY_HERE', // Get this from web3forms.com
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Portfolio Contact from ${formData.name}`
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Message sent!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Failed to send",
+        description: "Please try emailing me directly at akhileshvarute23@gmail.com",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
@@ -52,7 +83,7 @@ const Contact = () => {
       icon: Calendar,
       title: "Schedule a Call",
       description: "Book a 30-minute chat",
-      action: "#",
+      action: "https://cal.com/akhilesh-varute/30min",
       actionLabel: "Book Time"
     }
   ];
@@ -60,7 +91,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
           {/* Header */}
@@ -69,7 +100,7 @@ const Contact = () => {
               Let's <span className="gradient-text">Connect</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Looking for a Cloud Solutions Engineer or Solutions Architect? 
+              Looking for a Cloud Solutions Engineer or Solutions Architect?
               Let's discuss how I can help architect scalable, reliable cloud systems for your team.
             </p>
             <div className="flex items-center gap-2 mt-6 text-muted-foreground">
@@ -100,7 +131,7 @@ const Contact = () => {
                         required
                       />
                     </div>
-                    
+
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
                       <Input
@@ -112,7 +143,7 @@ const Contact = () => {
                         required
                       />
                     </div>
-                    
+
                     <div className="space-y-2">
                       <Label htmlFor="message">Message</Label>
                       <Textarea
@@ -124,9 +155,9 @@ const Contact = () => {
                         required
                       />
                     </div>
-                    
-                    <Button type="submit" className="w-full">
-                      Send Message
+
+                    <Button type="submit" className="w-full" disabled={isSubmitting}>
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>
@@ -149,8 +180,8 @@ const Contact = () => {
                             <h3 className="font-semibold mb-1">{method.title}</h3>
                             <p className="text-sm text-muted-foreground mb-3">{method.description}</p>
                             <Button variant="outline" size="sm" asChild>
-                              <a 
-                                href={method.action} 
+                              <a
+                                href={method.action}
                                 target={method.action.startsWith('http') ? '_blank' : undefined}
                                 rel={method.action.startsWith('http') ? 'noopener noreferrer' : undefined}
                               >
@@ -194,7 +225,7 @@ const Contact = () => {
           </div>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );
