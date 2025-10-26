@@ -17,10 +17,14 @@ const Index = () => {
       <section className="pt-32 pb-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center animate-fade-in">
-            {/* Avatar Placeholder */}
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-purple-500 mx-auto mb-8 flex items-center justify-center">
-              <span className="text-3xl font-bold text-primary-foreground">AV</span>
-            </div>
+            {/* Profile Picture */}
+<div className="w-24 h-24 rounded-full mx-auto mb-8 overflow-hidden border-4 border-primary/20">
+  <img 
+    src="/profile.png" 
+    alt="Akhilesh Varute" 
+    className="w-full h-full object-cover"
+  />
+</div>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
               Cloud & AI Solutions
