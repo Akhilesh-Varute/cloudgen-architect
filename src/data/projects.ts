@@ -29,6 +29,35 @@ export const projects = [
       "React"
     ],
     architecture: "Serverless, Multi-AZ, Event-driven",
+    architectureDiagram: `graph TB
+    subgraph AWS Cloud
+        CT[CloudTrail] -->|Events| EB[EventBridge]
+        CFG[Config] -->|Configuration| EB
+        IAM[IAM Policies] -->|Access Data| EB
+        
+        EB -->|Trigger| L1[Lambda Processor]
+        L1 -->|Query| BR[AWS Bedrock]
+        BR -->|AI Analysis| L1
+        
+        L1 -->|Store| S3[(S3 Storage)]
+        L1 -->|Cache| DDB[(DynamoDB)]
+        
+        subgraph Multi-AZ Setup
+            S3
+            DDB
+            L2[Lambda - AZ2]
+        end
+        
+        API[API Gateway] -->|Route| L1
+        API -->|Failover| L2
+    end
+    
+    UI[React Frontend] -->|HTTPS| API
+    
+    style BR fill:#FF9900
+    style UI fill:#61DAFB
+    style S3 fill:#569A31
+    style DDB fill:#4053D6`,
     liveUrl: "https://aicloudinsights.ai/",
     featured: true
   },
@@ -60,6 +89,40 @@ export const projects = [
       "Terraform"
     ],
     architecture: "Microservices, Auto-scaling, Multi-region",
+    architectureDiagram: `graph TB
+    subgraph Control Plane
+        API[API Gateway] -->|Request| SVC[Service Manager]
+        SVC -->|Allocate| SCHED[K8s Scheduler]
+    end
+    
+    subgraph Multi-Region Deployment
+        subgraph Region US-East
+            K8S1[K8s Cluster] -->|Manage| POD1[GPU Pods]
+            POD1 -->|Mount| PV1[Persistent Volume]
+        end
+        
+        subgraph Region EU-West
+            K8S2[K8s Cluster] -->|Manage| POD2[GPU Pods]
+            POD2 -->|Mount| PV2[Persistent Volume]
+        end
+    end
+    
+    SCHED -->|Deploy| K8S1
+    SCHED -->|Deploy| K8S2
+    
+    MON[Prometheus Monitoring] -->|Scrape| K8S1
+    MON -->|Scrape| K8S2
+    
+    AUTO[Auto-Scaler] -->|Scale| K8S1
+    AUTO -->|Scale| K8S2
+    MON -->|Metrics| AUTO
+    
+    S3[(S3 Storage)] -->|Artifacts| POD1
+    S3 -->|Artifacts| POD2
+    
+    style POD1 fill:#326CE5
+    style POD2 fill:#326CE5
+    style MON fill:#E6522C`,
     liveUrl: "https://gpus.gpuoncloud.com/",
     featured: true
   },

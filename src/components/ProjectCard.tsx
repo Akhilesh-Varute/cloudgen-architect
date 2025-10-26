@@ -1,7 +1,8 @@
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 
 interface ProjectCardProps {
   title: string;
@@ -11,6 +12,7 @@ interface ProjectCardProps {
   techStack: string[];
   liveUrl?: string;
   featured?: boolean;
+  architectureDiagram?: string;
 }
 
 const ProjectCard = ({ 
@@ -20,8 +22,11 @@ const ProjectCard = ({
   impact, 
   techStack, 
   liveUrl,
-  featured = false 
+  featured = false,
+  architectureDiagram 
 }: ProjectCardProps) => {
+  const [showArchitecture, setShowArchitecture] = useState(false);
+
   return (
     <Card className={`group hover:border-primary/50 transition-all duration-300 ${featured ? 'border-primary/30' : ''}`}>
       <CardHeader>
@@ -70,6 +75,42 @@ const ProjectCard = ({
             ))}
           </div>
         </div>
+
+        {/* Architecture Diagram Toggle */}
+        {architectureDiagram && (
+          <div className="pt-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="w-full"
+              onClick={() => setShowArchitecture(!showArchitecture)}
+            >
+              {showArchitecture ? (
+                <>
+                  Hide Architecture Diagram
+                  <ChevronUp className="ml-2 h-4 w-4" />
+                </>
+              ) : (
+                <>
+                  View Architecture Diagram
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </>
+              )}
+            </Button>
+
+            {showArchitecture && (
+              <div className="mt-4 p-4 border border-primary/30 rounded-lg bg-primary/5 animate-fade-in overflow-x-auto">
+                <h4 className="text-sm font-semibold mb-3 text-primary">System Architecture</h4>
+                <pre className="text-xs bg-background/50 p-4 rounded overflow-x-auto">
+                  <code>{architectureDiagram}</code>
+                </pre>
+                <p className="text-xs text-muted-foreground mt-3 italic">
+                  Architecture diagram showing system design and component interactions
+                </p>
+              </div>
+            )}
+          </div>
+        )}
       </CardContent>
       
       {liveUrl && (

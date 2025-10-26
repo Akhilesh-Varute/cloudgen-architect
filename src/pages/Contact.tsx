@@ -1,5 +1,6 @@
 import { Mail, Linkedin, Github, MapPin, Calendar } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -193,6 +194,8 @@ const Contact = () => {
           </div>
         </div>
       </main>
+      
+      <Footer />
     </div>
   );
 };

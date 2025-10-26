@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
+import { Menu, X, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -60,6 +60,12 @@ const Navigation = () => {
             >
               <Linkedin className="h-5 w-5" />
             </a>
+            <Button asChild size="sm" variant="outline">
+              <a href="/resume.pdf" download>
+                <Download className="mr-2 h-4 w-4" />
+                Resume
+              </a>
+            </Button>
             <Button asChild size="sm">
               <Link to="/contact">
                 <Mail className="mr-2 h-4 w-4" />

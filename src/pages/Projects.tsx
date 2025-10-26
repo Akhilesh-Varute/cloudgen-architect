@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
@@ -57,6 +58,7 @@ const Projects = () => {
                 techStack={project.techStack}
                 liveUrl={project.liveUrl}
                 featured={project.featured}
+                architectureDiagram={project.architectureDiagram}
               />
             ))}
           </div>
@@ -94,6 +96,8 @@ const Projects = () => {
           </div>
         </div>
       </main>
+      
+      <Footer />
     </div>
   );
 };

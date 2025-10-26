@@ -1,6 +1,7 @@
-import { ArrowRight, Cloud, Zap, Code } from "lucide-react";
+import { ArrowRight, Cloud, Zap, Code, Award, Users, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
@@ -118,6 +119,7 @@ const Index = () => {
                 techStack={project.techStack}
                 liveUrl={project.liveUrl}
                 featured={project.featured}
+                architectureDiagram={project.architectureDiagram}
               />
             ))}
           </div>
@@ -155,6 +157,165 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Impact Metrics Section */}
+      <section className="py-20 bg-primary/5">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Impact by the <span className="gradient-text">Numbers</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Measurable results from architecting production systems at scale
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto animate-fade-in-delay">
+            <div className="text-center p-6 rounded-lg border border-primary/30 bg-background/50 backdrop-blur">
+              <Award className="h-12 w-12 text-primary mx-auto mb-4" />
+              <div className="text-4xl font-bold gradient-text mb-2">60%</div>
+              <p className="text-sm text-muted-foreground">Reduction in Manual Effort</p>
+              <p className="text-xs text-muted-foreground mt-1">(AI Cloud Insights)</p>
+            </div>
+
+            <div className="text-center p-6 rounded-lg border border-primary/30 bg-background/50 backdrop-blur">
+              <Users className="h-12 w-12 text-primary mx-auto mb-4" />
+              <div className="text-4xl font-bold gradient-text mb-2">99.5%</div>
+              <p className="text-sm text-muted-foreground">Uptime Achieved</p>
+              <p className="text-xs text-muted-foreground mt-1">(GPU Marketplace)</p>
+            </div>
+
+            <div className="text-center p-6 rounded-lg border border-primary/30 bg-background/50 backdrop-blur">
+              <Zap className="h-12 w-12 text-primary mx-auto mb-4" />
+              <div className="text-4xl font-bold gradient-text mb-2">40%</div>
+              <p className="text-sm text-muted-foreground">Faster Build Times</p>
+              <p className="text-xs text-muted-foreground mt-1">(Dockerfile Optimizer)</p>
+            </div>
+
+            <div className="text-center p-6 rounded-lg border border-primary/30 bg-background/50 backdrop-blur">
+              <Target className="h-12 w-12 text-primary mx-auto mb-4" />
+              <div className="text-4xl font-bold gradient-text mb-2">5+</div>
+              <p className="text-sm text-muted-foreground">Production Systems</p>
+              <p className="text-xs text-muted-foreground mt-1">(Enterprise Clients)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Makes Me Different Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="border border-primary/30 rounded-lg p-8 md:p-12 bg-gradient-to-br from-primary/5 to-background animate-fade-in">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                What Makes Me <span className="gradient-text">Different</span>
+              </h2>
+              
+              <div className="space-y-6 text-muted-foreground">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mt-1">
+                    <span className="text-primary font-bold">1</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                      Architecture-First at 1.5 Years
+                    </h3>
+                    <p>
+                      Most developers at my experience level focus on feature coding. I've architected 
+                      full production platforms used by enterprise clients - from system design to deployment.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mt-1">
+                    <span className="text-primary font-bold">2</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                      Gen AI + Cloud Expertise
+                    </h3>
+                    <p>
+                      The intersection of AI and cloud is the future. I have hands-on production experience 
+                      with AWS Bedrock, LangChain, and building GenAI-powered cloud operations platforms.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mt-1">
+                    <span className="text-primary font-bold">3</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                      Solutions Architect Mindset
+                    </h3>
+                    <p>
+                      I don't just write code - I design systems. Every project starts with understanding 
+                      requirements, evaluating trade-offs, and choosing the right architecture patterns before 
+                      touching a keyboard.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mt-1">
+                    <span className="text-primary font-bold">4</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                      Real Production Impact
+                    </h3>
+                    <p>
+                      My projects aren't just portfolio pieces - they're live systems processing real workloads 
+                      for actual enterprise clients. I understand what it takes to build for scale, reliability, 
+                      and business value.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-primary/20">
+                <p className="text-sm text-muted-foreground italic">
+                  "At 1.5 years, I bring the system thinking of a Solutions Architect with the hands-on 
+                  execution skills of a Cloud Engineer - architecting platforms that combine AI intelligence 
+                  with enterprise-grade reliability."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary/5">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Let's Build Something <span className="gradient-text">Scalable</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Looking for Cloud Solutions Engineer or Solutions Architect opportunities 
+              where I can design systems that matter.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" asChild>
+                <a href="/contact">
+                  Get In Touch
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a href="/resume.pdf" download>
+                  Download Resume
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
