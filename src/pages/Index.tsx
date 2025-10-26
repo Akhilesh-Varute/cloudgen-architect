@@ -12,35 +12,35 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center animate-fade-in">
             {/* Profile Picture */}
-<div className="w-24 h-24 rounded-full mx-auto mb-8 overflow-hidden border-4 border-primary/20">
-  <img 
-    src="/profile.png" 
-    alt="Akhilesh Varute" 
-    className="w-full h-full object-cover"
-  />
-</div>
-            
+            <div className="w-32 h-32 rounded-full mx-auto mb-8 overflow-hidden border-4 border-primary/20">
+              <img
+                src="/profile.png"
+                alt="Akhilesh Varute"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
               Cloud & AI Solutions
               <br />
               <span className="gradient-text">Engineer</span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Designing Scalable Gen AI Systems on AWS
             </p>
-            
+
             <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-              I architect cloud-native platforms that combine AI intelligence with enterprise-grade reliability. 
+              I architect cloud-native platforms that combine AI intelligence with enterprise-grade reliability.
               From concept to production, I build systems that scale.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button size="lg" asChild>
                 <a href="#featured-work">
@@ -52,7 +52,7 @@ const Index = () => {
                 <Link to="/contact">Get In Touch</Link>
               </Button>
             </div>
-            
+
             <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
               <Cloud className="h-5 w-5 text-primary" />
               <span>AWS Certified Developer → Solutions Architect</span>
@@ -76,7 +76,7 @@ const Index = () => {
                 Designing scalable, high-availability systems on AWS with multi-AZ deployments and auto-scaling.
               </p>
             </div>
-            
+
             <div className="text-center animate-fade-in-delay">
               <div className="h-16 w-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Zap className="h-8 w-8 text-primary" />
@@ -86,7 +86,7 @@ const Index = () => {
                 Building intelligent cloud systems with AWS Bedrock, OpenAI, and LangChain for automated operations.
               </p>
             </div>
-            
+
             <div className="text-center animate-fade-in-delay">
               <div className="h-16 w-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Code className="h-8 w-8 text-primary" />
@@ -111,7 +111,7 @@ const Index = () => {
               Production systems architected from concept to deployment, serving enterprise clients at scale.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {featuredProjects.map((project) => (
               <ProjectCard
@@ -127,7 +127,7 @@ const Index = () => {
               />
             ))}
           </div>
-          
+
           <div className="text-center">
             <Button variant="outline" size="lg" asChild>
               <Link to="/projects">
@@ -147,7 +147,7 @@ const Index = () => {
               Ready to Build Something <span className="gradient-text">Scalable</span>?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              I'm looking for Cloud Solutions Engineer or Solutions Architect roles where I can design 
+              I'm looking for Cloud Solutions Engineer or Solutions Architect roles where I can design
               systems at the intersection of AI and cloud computing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -214,7 +214,7 @@ const Index = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 What Makes Me <span className="gradient-text">Different</span>
               </h2>
-              
+
               <div className="space-y-6 text-muted-foreground">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mt-1">
@@ -225,7 +225,7 @@ const Index = () => {
                       Architecture-First at 1.5 Years
                     </h3>
                     <p>
-                      Most developers at my experience level focus on feature coding. I've architected 
+                      Most developers at my experience level focus on feature coding. I've architected
                       full production platforms used by enterprise clients - from system design to deployment.
                     </p>
                   </div>
@@ -240,7 +240,7 @@ const Index = () => {
                       Gen AI + Cloud Expertise
                     </h3>
                     <p>
-                      The intersection of AI and cloud is the future. I have hands-on production experience 
+                      The intersection of AI and cloud is the future. I have hands-on production experience
                       with AWS Bedrock, LangChain, and building GenAI-powered cloud operations platforms.
                     </p>
                   </div>
@@ -255,8 +255,8 @@ const Index = () => {
                       Solutions Architect Mindset
                     </h3>
                     <p>
-                      I don't just write code - I design systems. Every project starts with understanding 
-                      requirements, evaluating trade-offs, and choosing the right architecture patterns before 
+                      I don't just write code - I design systems. Every project starts with understanding
+                      requirements, evaluating trade-offs, and choosing the right architecture patterns before
                       touching a keyboard.
                     </p>
                   </div>
@@ -271,8 +271,8 @@ const Index = () => {
                       Real Production Impact
                     </h3>
                     <p>
-                      My projects aren't just portfolio pieces - they're live systems processing real workloads 
-                      for actual enterprise clients. I understand what it takes to build for scale, reliability, 
+                      My projects aren't just portfolio pieces - they're live systems processing real workloads
+                      for actual enterprise clients. I understand what it takes to build for scale, reliability,
                       and business value.
                     </p>
                   </div>
@@ -281,8 +281,8 @@ const Index = () => {
 
               <div className="mt-8 pt-8 border-t border-primary/20">
                 <p className="text-sm text-muted-foreground italic">
-                  "At 1.5 years, I bring the system thinking of a Solutions Architect with the hands-on 
-                  execution skills of a Cloud Engineer - architecting platforms that combine AI intelligence 
+                  "At 1.5 years, I bring the system thinking of a Solutions Architect with the hands-on
+                  execution skills of a Cloud Engineer - architecting platforms that combine AI intelligence
                   with enterprise-grade reliability."
                 </p>
               </div>
@@ -299,7 +299,7 @@ const Index = () => {
               Let's Build Something <span className="gradient-text">Scalable</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Looking for Cloud Solutions Engineer or Solutions Architect opportunities 
+              Looking for Cloud Solutions Engineer or Solutions Architect opportunities
               where I can design systems that matter.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

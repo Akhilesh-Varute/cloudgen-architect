@@ -6,54 +6,53 @@ import { useState } from "react";
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  
+
   const isActive = (path: string) => location.pathname === path;
-  
+
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/projects", label: "Projects" },
     { path: "/contact", label: "Contact" },
   ];
-  
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="text-xl font-bold gradient-text">
-            AV
+            Akhilesh.
           </Link>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(link.path) ? "text-primary" : "text-muted-foreground"
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-primary ${isActive(link.path) ? "text-primary" : "text-muted-foreground"
+                  }`}
               >
                 {link.label}
               </Link>
             ))}
           </div>
-          
+
           {/* Social Links & CTA - Desktop */}
           <div className="hidden md:flex items-center gap-4">
-            <a 
-              href="https://github.com/Akhilesh-Varute" 
-              target="_blank" 
+            <a
+              href="https://github.com/Akhilesh-Varute"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
             </a>
-            <a 
-              href="https://www.linkedin.com/in/akhileshvarute" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/akhileshvarute"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="LinkedIn"
@@ -73,7 +72,7 @@ const Navigation = () => {
               </Link>
             </Button>
           </div>
-          
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -84,7 +83,7 @@ const Navigation = () => {
           </button>
         </div>
       </div>
-      
+
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-lg">
@@ -94,26 +93,25 @@ const Navigation = () => {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block py-2 text-sm font-medium transition-colors ${
-                  isActive(link.path) ? "text-primary" : "text-muted-foreground"
-                }`}
+                className={`block py-2 text-sm font-medium transition-colors ${isActive(link.path) ? "text-primary" : "text-muted-foreground"
+                  }`}
               >
                 {link.label}
               </Link>
             ))}
             <div className="flex items-center gap-4 pt-3 border-t border-border">
-              <a 
-                href="https://github.com/Akhilesh-Varute" 
-                target="_blank" 
+              <a
+                href="https://github.com/Akhilesh-Varute"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
               </a>
-              <a 
-                href="https://www.linkedin.com/in/akhileshvarute" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/akhileshvarute"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="LinkedIn"
