@@ -30,22 +30,22 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      description: "akhilesh.varute@example.com",
-      action: "mailto:akhilesh.varute@example.com",
+      description: "akhileshvarute23@gmail.com",
+      action: "mailto:akhileshvarute23@gmail.com",
       actionLabel: "Send Email"
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
       description: "Connect professionally",
-      action: "https://linkedin.com",
+      action: "https://www.linkedin.com/in/akhileshvarute",
       actionLabel: "View Profile"
     },
     {
       icon: Github,
       title: "GitHub",
       description: "Check out my code",
-      action: "https://github.com",
+      action: "https://github.com/Akhilesh-Varute",
       actionLabel: "View Repositories"
     },
     {
