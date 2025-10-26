@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import MermaidDiagram from "./MermaidDiagram";
 
 interface ProjectCardProps {
   title: string;
@@ -15,15 +16,15 @@ interface ProjectCardProps {
   architectureDiagram?: string;
 }
 
-const ProjectCard = ({ 
-  title, 
-  description, 
-  challenge, 
-  impact, 
-  techStack, 
+const ProjectCard = ({
+  title,
+  description,
+  challenge,
+  impact,
+  techStack,
   liveUrl,
   featured = false,
-  architectureDiagram 
+  architectureDiagram
 }: ProjectCardProps) => {
   const [showArchitecture, setShowArchitecture] = useState(false);
 
@@ -44,7 +45,7 @@ const ProjectCard = ({
           {description}
         </CardDescription>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
         <div>
           <h4 className="text-sm font-semibold text-primary mb-2">The Challenge</h4>
@@ -52,7 +53,7 @@ const ProjectCard = ({
             {challenge}
           </p>
         </div>
-        
+
         <div>
           <h4 className="text-sm font-semibold text-primary mb-2">The Impact</h4>
           <ul className="space-y-1">
@@ -64,7 +65,7 @@ const ProjectCard = ({
             ))}
           </ul>
         </div>
-        
+
         <div>
           <h4 className="text-sm font-semibold mb-2">Tech Stack</h4>
           <div className="flex flex-wrap gap-2">
@@ -78,41 +79,13 @@ const ProjectCard = ({
 
         {/* Architecture Diagram Toggle */}
         {architectureDiagram && (
-          <div className="pt-2">
-            <Button
-              variant="outline"
-              size="sm"
-              className="w-full"
-              onClick={() => setShowArchitecture(!showArchitecture)}
-            >
-              {showArchitecture ? (
-                <>
-                  Hide Architecture Diagram
-                  <ChevronUp className="ml-2 h-4 w-4" />
-                </>
-              ) : (
-                <>
-                  View Architecture Diagram
-                  <ChevronDown className="ml-2 h-4 w-4" />
-                </>
-              )}
-            </Button>
-
-            {showArchitecture && (
-              <div className="mt-4 p-4 border border-primary/30 rounded-lg bg-primary/5 animate-fade-in overflow-x-auto">
-                <h4 className="text-sm font-semibold mb-3 text-primary">System Architecture</h4>
-                <pre className="text-xs bg-background/50 p-4 rounded overflow-x-auto">
-                  <code>{architectureDiagram}</code>
-                </pre>
-                <p className="text-xs text-muted-foreground mt-3 italic">
-                  Architecture diagram showing system design and component interactions
-                </p>
-              </div>
-            )}
+          <div className="mt-4">
+            <h4 className="font-semibold mb-2">Architecture</h4>
+            <MermaidDiagram chart={architectureDiagram} id={`diagram-${title}`} />
           </div>
         )}
       </CardContent>
-      
+
       {liveUrl && (
         <CardFooter>
           <Button variant="outline" asChild className="w-full group/btn">
