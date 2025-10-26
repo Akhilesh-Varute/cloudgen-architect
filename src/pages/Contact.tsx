@@ -27,7 +27,7 @@ const Contact = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'YOUR_ACCESS_KEY_HERE', // Get this from web3forms.com
+          access_key: 'fea6fe37-c64c-431c-81ec-ae602d245b91', // Get this from web3forms.com
           name: formData.name,
           email: formData.email,
           message: formData.message,
