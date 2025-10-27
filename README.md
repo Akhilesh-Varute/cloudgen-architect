@@ -103,4 +103,4 @@ This project is deployed with automatic SSL certificate provisioning. Any change
 
 - **Email**: akhilesh.varute@example.com
 - **LinkedIn**: [linkedin.com/in/akhilesh-varute](https://linkedin.com/in/akhilesh-varute)
-- **GitHub**: [github.com/akhileshvarute](https://github.com/akhileshvarute)
+- **GitHub**: [github.com/Akhilesh-Varute](https://github.com/Akhilesh-Varute)
