@@ -1,73 +1,106 @@
-# Welcome to your Lovable project
+# Akhilesh Varute - Portfolio Website
 
-## Project info
+Professional portfolio showcasing cloud architecture and AI engineering projects.
 
-**URL**: https://lovable.dev/projects/c807615b-dbdd-41ef-8fdd-b0f3597d9bae
+## About
 
-## How can I edit this code?
+Cloud Solutions Engineer specializing in AWS architecture and Gen AI integration. This portfolio demonstrates experience in designing scalable platforms handling 100K+ requests/day, with expertise in system design, microservices, and cloud-native architectures.
 
-There are several ways of editing your application.
+## Live Site
 
-**Use Lovable**
+**Production URL**: [https://akhileshvarute.me](https://akhileshvarute.me)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c807615b-dbdd-41ef-8fdd-b0f3597d9bae) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18, TypeScript
+- **Styling**: Tailwind CSS, shadcn-ui components
+- **Build Tool**: Vite
+- **Routing**: React Router v6
+- **Diagrams**: Mermaid for architecture visualizations
+- **Icons**: Lucide React
 
-**Use your preferred IDE**
+## Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- 🎨 Modern, responsive design with dark theme
+- 📊 Interactive architecture diagrams for projects
+- 🚀 Optimized for performance and SEO
+- 📱 Mobile-first responsive layout
+- 🔍 Rich structured data for Google AEO
+- 📄 Complete sitemap for search engines
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Project Structure
 
-Follow these steps:
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn-ui components
+│   ├── Navigation.tsx
+│   ├── ProjectCard.tsx
+│   ├── Footer.tsx
+│   └── MermaidDiagram.tsx
+├── pages/              # Page components
+│   ├── Index.tsx       # Home page
+│   ├── About.tsx       # About me
+│   ├── Projects.tsx    # Projects showcase
+│   └── Contact.tsx     # Contact page
+├── data/               # Data files
+│   └── projects.ts     # Project information
+└── lib/                # Utility functions
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Local Development
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Prerequisites
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Node.js (v18 or higher)
+- npm or bun
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Installation
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+
+# Navigate to project directory
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Build for Production
 
-**Use GitHub Codespaces**
+```bash
+# Create production build
+npm run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Preview production build locally
+npm run preview
+```
 
-## What technologies are used for this project?
+## Deployment
 
-This project is built with:
+This project is deployed with automatic SSL certificate provisioning. Any changes pushed to the main branch are automatically deployed.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## SEO Optimization
 
-## How can I deploy this project?
+- Comprehensive meta tags for social sharing
+- Structured data (JSON-LD) for rich search results
+- Sitemap for search engine crawling
+- Canonical URLs to prevent duplicate content
+- Optimized for Google's AI Overview (AEO)
 
-Simply open [Lovable](https://lovable.dev/projects/c807615b-dbdd-41ef-8fdd-b0f3597d9bae) and click on Share -> Publish.
+## License
 
-## Can I connect a custom domain to my Lovable project?
+© 2025 Akhilesh Varute. All rights reserved.
 
-Yes, you can!
+## Contact
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **Email**: akhilesh.varute@example.com
+- **LinkedIn**: [linkedin.com/in/akhilesh-varute](https://linkedin.com/in/akhilesh-varute)
+- **GitHub**: [github.com/akhileshvarute](https://github.com/akhileshvarute)
