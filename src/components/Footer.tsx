@@ -48,7 +48,7 @@ const Footer = () => {
           {/* Right: Social Links */}
           <div className="flex gap-4">
             <a
-              href="https://github.com/akhileshvarute"
+              href="https://github.com/Akhilesh-Varute"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
