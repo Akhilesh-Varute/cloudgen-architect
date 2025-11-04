@@ -128,6 +128,60 @@ export const projects = [
   },
   {
     id: 3,
+    title: "E-Commerce Infrastructure Modernization",
+    description: "Cost-optimized serverless architecture reducing monthly AWS costs by 40% while improving scalability",
+    challenge: "Client was running an e-commerce platform on traditional EC2 instances - frontend EC2 ($120/month) and backend EC2 with co-located MongoDB ($80+/month), totaling $200+/month. The architecture had several issues: no auto-scaling, manual deployments, single point of failure for database, and inefficient resource utilization during off-peak hours.",
+    approach: "Redesigned the entire infrastructure using modern serverless and managed services. Moved the Vite frontend to S3 with CloudFront for global CDN delivery, migrated the Node.js backend to AWS App Runner for automatic scaling, and transitioned to MongoDB Atlas for managed database with built-in replication and backups. Implemented proper monitoring with CloudWatch and added AWS Shield for DDoS protection.",
+    keyDecisions: [
+      "CloudFront with S3 for static hosting (eliminated frontend EC2 costs)",
+      "AWS App Runner for backend (pay-per-use vs always-on EC2)",
+      "MongoDB Atlas for managed database (offloaded DB maintenance)",
+      "CloudWatch integration for centralized logging and monitoring",
+      "Route-based CloudFront distribution (/* for static, /api/* for backend)"
+    ],
+    impact: [
+      "Reduced monthly infrastructure costs from $200+ to $120 (40% reduction)",
+      "Eliminated single points of failure with managed services",
+      "Auto-scaling for traffic spikes during sales events",
+      "Zero-downtime deployments with App Runner",
+      "Improved global performance with CloudFront CDN"
+    ],
+    techStack: [
+      "AWS CloudFront",
+      "AWS Shield",
+      "S3",
+      "AWS App Runner",
+      "MongoDB Atlas",
+      "Node.js",
+      "Vite",
+      "CloudWatch",
+      "React"
+    ],
+    architecture: "Serverless, Cost-optimized, CDN-first",
+    architectureDiagram: `flowchart TD
+    U[User/Customer] --> CF[CloudFront CDN + Shield]
+    CF -->|Static Assets /*| S3[S3 Bucket - Vite Frontend]
+    CF -->|API Requests /api/*| AR[AWS App Runner - Node.js Backend]
+    AR --> MDB[(MongoDB Atlas - Managed Database)]
+    AR --> CW[CloudWatch Logs - Monitoring]
+    
+    subgraph Cost Savings
+        OLD[Old: 2x EC2 - $200+/month]
+        NEW[New: Serverless - $120/month]
+        OLD -.->|40% reduction| NEW
+    end
+    
+    style CF fill:#FF9900,stroke:#232F3E,stroke-width:3px,color:#fff
+    style S3 fill:#569A31,stroke:#232F3E,stroke-width:2px,color:#fff
+    style AR fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+    style MDB fill:#00684A,stroke:#232F3E,stroke-width:2px,color:#fff
+    style CW fill:#FF4F8B,stroke:#232F3E,stroke-width:2px,color:#fff
+    style OLD fill:#d32f2f,stroke:#232F3E,stroke-width:2px,color:#fff
+    style NEW fill:#388e3c,stroke:#232F3E,stroke-width:2px,color:#fff`,
+    featured: true
+  },
+  {
+    id: 4,
     title: "SmartDevOps Engine",
     description: "Automated AWS provisioning and governance platform",
     challenge: "Development teams were spending excessive time on manual AWS resource provisioning and struggling with configuration errors and compliance violations.",
@@ -156,7 +210,7 @@ export const projects = [
     featured: false
   },
   {
-    id: 4,
+    id: 5,
     title: "IAM Policy Analyzer",
     description: "AI-driven access control scanner for AWS IAM",
     challenge: "Complex IAM policies were creating security risks through overly permissive access and difficult-to-audit configurations.",
@@ -184,7 +238,7 @@ export const projects = [
     featured: false
   },
   {
-    id: 5,
+    id: 6,
     title: "Dockerfile Optimizer",
     description: "GenAI-powered container optimization tool",
     challenge: "Docker images were unnecessarily large and slow to build, impacting deployment speed and storage costs across multiple projects.",
