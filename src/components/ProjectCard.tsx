@@ -1,7 +1,8 @@
-import { ExternalLink, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ExternalLink, ArrowRight, ChevronDown, ChevronUp, Maximize2 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useState } from "react";
 import MermaidDiagram from "./MermaidDiagram";
 
@@ -26,7 +27,7 @@ const ProjectCard = ({
   featured = false,
   architectureDiagram
 }: ProjectCardProps) => {
-  const [showArchitecture, setShowArchitecture] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <Card className={`group hover:border-primary/50 transition-all duration-300 ${featured ? 'border-primary/30' : ''}`}>
@@ -77,11 +78,41 @@ const ProjectCard = ({
           </div>
         </div>
 
-        {/* Architecture Diagram Toggle */}
+        {/* Architecture Diagram */}
         {architectureDiagram && (
           <div className="mt-4">
-            <h4 className="font-semibold mb-2">Architecture</h4>
-            <MermaidDiagram chart={architectureDiagram} id={`diagram-${title}`} />
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="font-semibold">Architecture</h4>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setDialogOpen(true)}
+                className="text-xs"
+              >
+                <Maximize2 className="h-3 w-3 mr-1" />
+                Full Screen
+              </Button>
+            </div>
+            <MermaidDiagram 
+              chart={architectureDiagram} 
+              id={`diagram-${title}`}
+              onClick={() => setDialogOpen(true)}
+            />
+            
+            <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+              <DialogContent className="max-w-5xl w-full max-h-[90vh] overflow-auto bg-background/95 backdrop-blur-sm">
+                <DialogHeader>
+                  <DialogTitle>{title} - Architecture</DialogTitle>
+                </DialogHeader>
+                <div className="mt-4">
+                  <MermaidDiagram 
+                    chart={architectureDiagram} 
+                    id={`dialog-diagram-${title}`}
+                    className="min-h-[400px]"
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         )}
       </CardContent>
